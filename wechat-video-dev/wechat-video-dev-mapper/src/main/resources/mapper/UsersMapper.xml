@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.atlantis.mapper.UsersMapper">
+  <resultMap id="BaseResultMap" type="com.atlantis.domain.Users">
+    <id column="id" jdbcType="VARCHAR" property="id" />
+    <result column="username" jdbcType="VARCHAR" property="username" />
+    <result column="password" jdbcType="VARCHAR" property="password" />
+    <result column="face_image" jdbcType="VARCHAR" property="faceImage" />
+    <result column="nickname" jdbcType="VARCHAR" property="nickname" />
+    <result column="fans_counts" jdbcType="INTEGER" property="fansCounts" />
+    <result column="follow_counts" jdbcType="INTEGER" property="followCounts" />
+    <result column="receive_like_counts" jdbcType="INTEGER" property="receiveLikeCounts" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from vuser
+    where id = #{id,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.atlantis.domain.Users">
+    insert into vuser (id, username, password, 
+      face_image, nickname, fans_counts, 
+      follow_counts, receive_like_counts)
+    values (#{id,jdbcType=VARCHAR}, #{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
+      #{faceImage,jdbcType=VARCHAR}, #{nickname,jdbcType=VARCHAR}, #{fansCounts,jdbcType=INTEGER}, 
+      #{followCounts,jdbcType=INTEGER}, #{receiveLikeCounts,jdbcType=INTEGER})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.atlantis.domain.Users">
+    update vuser
+    set username = #{username,jdbcType=VARCHAR},
+      password = #{password,jdbcType=VARCHAR},
+      face_image = #{faceImage,jdbcType=VARCHAR},
+      nickname = #{nickname,jdbcType=VARCHAR},
+      fans_counts = #{fansCounts,jdbcType=INTEGER},
+      follow_counts = #{followCounts,jdbcType=INTEGER},
+      receive_like_counts = #{receiveLikeCounts,jdbcType=INTEGER}
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select id, username, password, face_image, nickname, fans_counts, follow_counts, 
+    receive_like_counts
+    from vuser
+    where id = #{id,jdbcType=VARCHAR}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select id, username, password, face_image, nickname, fans_counts, follow_counts, 
+    receive_like_counts
+    from vuser
+  </select>
+</mapper>

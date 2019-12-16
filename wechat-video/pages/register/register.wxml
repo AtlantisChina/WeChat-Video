@@ -1,0 +1,48 @@
+<!--register.wxml:用户注册界面-->
+<view>
+  <!--背景图轮播-->
+  <swiper class="swiperStyle" indicator-dots="{{true}}" autoplay="{{autoplay}}">
+    <block wx:for="{{imgPaths}}" wx:key="key">
+      <swiper-item>
+        <image class="login-img" src="{{item}}"></image>
+      </swiper-item>
+    </block>
+  </swiper>
+
+  <view class="login-from">
+    <form bindsubmit='doRegist'>
+      <!--账号-->
+      <view class="inputView">
+        <image class="nameImage" src="/resource/images/username.png"></image>
+        <label class="LabelStyle">账号</label>
+        <input name="username" class="inputText" maxlength="12" placeholder="请输入账号" />
+      </view>
+
+      <view class="line"></view>
+
+      <!--密码-->
+      <view class="inputView">
+        <image class="keyImage" src="/resource/images/password.png"></image>
+        <label class="LabelStyle">密码</label>
+        <input name="password" class="inputText" maxlength="12" password="true" placeholder="请输入密码" />
+      </view>
+
+      <view class="line"></view>
+
+      <!--密码-->
+      <view class="inputView">
+        <image class="keyImage" src="/resource/images/password.png"></image>
+        <label class="LabelStyle">密码</label>
+        <input name="repassword" class="inputText" maxlength="12" password="true" placeholder="请确认密码" />
+      </view>
+
+      <!--按钮-->
+      <view>
+        <button class="RegistBtn" type="primary" form-type='submit'>注册</button>
+      </view>
+      <view>
+        <button class="goLoginBtn" type="warn" bindtap="goLoginPage">返回登录</button>
+      </view>
+    </form>
+  </view>
+</view>

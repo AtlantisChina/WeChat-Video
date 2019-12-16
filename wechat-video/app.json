@@ -1,0 +1,20 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/videoInfo/videoInfo",
+    "pages/login/login",
+    "pages/mine/mine",
+    "pages/register/register",
+    "pages/search/search",
+    "pages/chooseBgm/chooseBgm",
+    "pages/report/report"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "短视频",
+    "navigationBarTextStyle": "black"
+  },
+  "debug": true,
+  "sitemapLocation": "sitemap.json"
+}

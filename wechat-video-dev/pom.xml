@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.atlantis</groupId>
+    <artifactId>wechat-video-dev</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <modules>
+        <module>wechat-video-dev-common</module>
+        <module>wechat-video-dev-mapper</module>
+        <module>wechat-video-dev-domain</module>
+        <module>wechat-video-dev-service</module>
+        <module>wechat-video-dev-mini-api</module>
+    </modules>
+    <packaging>pom</packaging>
+
+    <!-- 所有的SpringBoot工程都必须继承该父工程 -->
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.0.1.RELEASE</version>
+    </parent>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <java.version>1.8</java.version>
+    </properties>
+</project>
